@@ -1,0 +1,9 @@
+<div *ngIf="student!==undefined">
+  <img class="img" [src]=student.profilePicture>
+  <p>{{student.id}}</p>
+  <p>{{student.firstName}}</p>
+  <p>{{student.lastName}}</p>
+  <p>{{student.email}}</p>
+  <textarea #txtarea>{{student.notes}}</textarea>
+  <button type="submit" (click) = 'putStudent(txtarea.value)'>Add Note</button>
+</div>

@@ -1,0 +1,14 @@
+<div class="ticket-list">
+
+  <div>
+    <button type="submit" class="btn-custom" *ngIf="displayTicketArchived" (click)="hideArchived()">Hide archived</button>
+    <button type="submit" class="btn-custom" *ngIf="!displayTicketArchived" (click)="showArchived()">Show archived</button>
+  </div>
+
+  <ng-container *ngFor="let ticket of ticketList">
+    <div class="ticket" *ngIf="ticket.archived && displayTicketArchived || !ticket.archived && !displayTicketArchived">
+      <app-ticket [ticket]="ticket" (ticketHasBeenSelected)="ticketHasBeenSelected($event)"
+                  (ticketHasBeenArchived)="archiveTicket(ticket)"></app-ticket>
+    </div>
+  </ng-container>
+</div>

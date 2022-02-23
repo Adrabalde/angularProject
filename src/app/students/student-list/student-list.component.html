@@ -1,0 +1,5 @@
+<div class="student-list">
+  <div *ngFor="let student of students">
+    <app-student [student]="student" (studentHasBeenRemoved)="deleteStudent(student)"></app-student>
+  </div>
+</div>

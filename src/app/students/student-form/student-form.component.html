@@ -1,0 +1,28 @@
+<h3>Create a new Student</h3>
+<form class="student-form" [formGroup]="studentForm">
+  <label for="firstName">
+    First Name <br>
+    <input #firstName class="input-custom" type="text" id="firstName" [formControlName]="'firstName'">
+  </label>
+  <br>
+  <label for="lastName">
+    Last Name <br>
+    <input #lastName class="input-custom" type="text" id="lastName" [formControlName]="'lastName'">
+  </label>
+  <br>
+  <label for="email">
+    e-mail<br>
+    <input #email class="input-custom" type="text" id="email" [formControlName]="'email'">
+  </label>
+  <br>
+  <label for="profilePicture">
+    Profile Pic<br>
+    <input #profilPic class="input-custom" type="text" id="profilePicture" [formControlName]="'profilePicture'">
+  </label>
+  <br>
+  <button *ngIf="firstName.value.length>0 && lastName.value.length>0 && email.value.length>0 &&
+  profilPic.value.length>0" type="submit" routerLink="/students"
+          class="btn-custom" (click)="addStudent()">Create
+  </button>
+</form>
+

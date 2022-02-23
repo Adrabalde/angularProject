@@ -1,0 +1,10 @@
+export interface Student {
+  id?: number;
+  lastName?: string;
+  firstName?: string;
+  profilePicture?: string;
+  email?: string;
+  notes?: string;
+
+}
+
